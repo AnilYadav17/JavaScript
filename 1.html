@@ -1,14 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JavaScript Fundamentals Interactive Demo</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #38bdf8;
+            --primary-hover: #0ea5e9;
+            --accent: #a855f7;
+            --border: #334155;
+            --success: #34d399;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.5rem 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: #0f172a;
+            border: none;
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .output-box {
+            margin-top: 1rem;
+            padding: 0.85rem 1rem;
+            border-radius: 8px;
+            background: #090d16;
+            border: 1px dashed var(--border);
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9rem;
+            color: var(--success);
+            min-height: 42px;
+            display: flex;
+            align-items: center;
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <header>
+            <h1>JavaScript Interactive Guide</h1>
+            <p class="subtitle">Practical demonstrations of core concepts from <code>THEORY.md</code></p>
+        </header>
 
+        <!-- Demo 1: Event-Driven Programming -->
+        <div class="card">
+            <h2>1. Event-Driven Programming (DOM Events)</h2>
+            <p>JavaScript listens and reacts to user interactions such as button clicks, typing, or scrolling.</p>
+            <button id="counterBtn" class="btn">Click Me (Clicks: 0)</button>
+            <div id="counterOutput" class="output-box">Waiting for user interaction...</div>
+        </div>
+
+        <!-- Demo 2: Dynamic Typing & Transformations -->
+        <div class="card">
+            <h2>2. Functional Transformations (Array.map)</h2>
+            <p>Functional programming in JS treats computations as data transformations without mutating original states.</p>
+            <button id="transformBtn" class="btn">Transform Numbers</button>
+            <div id="transformOutput" class="output-box">Input: [1, 2, 3, 4, 5]</div>
+        </div>
+
+        <!-- Demo 3: Asynchronous Programming & Event Loop -->
+        <div class="card">
+            <h2>3. Asynchronous JavaScript (Promises & Timers)</h2>
+            <p>Non-blocking asynchronous operations coordinated by the browser runtime and the Event Loop.</p>
+            <button id="asyncBtn" class="btn">Simulate Async Fetch</button>
+            <div id="asyncOutput" class="output-box">Ready to simulate network latency...</div>
+        </div>
+    </div>
+
+    <script>
+        // --- 1. Event-Driven Programming ---
+        let count = 0;
+        const counterBtn = document.getElementById("counterBtn");
+        const counterOutput = document.getElementById("counterOutput");
+
+        counterBtn.addEventListener("click", () => {
+            count++;
+            counterBtn.textContent = `Click Me (Clicks: ${count})`;
+            counterOutput.textContent = `✓ Event Handled: Button was clicked at ${new Date().toLocaleTimeString()} (Count: ${count})`;
+        });
+
+        // --- 2. Functional Programming (map) ---
+        const transformBtn = document.getElementById("transformBtn");
+        const transformOutput = document.getElementById("transformOutput");
+
+        transformBtn.addEventListener("click", () => {
+            const rawNumbers = [1, 2, 3, 4, 5];
+            const squares = rawNumbers.map(n => n * n);
+            transformOutput.textContent = `Original: [${rawNumbers.join(", ")}] ➔ Squared: [${squares.join(", ")}]`;
+        });
+
+        // --- 3. Asynchronous Programming (Promise simulation) ---
+        const asyncBtn = document.getElementById("asyncBtn");
+        const asyncOutput = document.getElementById("asyncOutput");
+
+        asyncBtn.addEventListener("click", async () => {
+            asyncBtn.disabled = true;
+            asyncOutput.textContent = "⏳ Simulating asynchronous network delay (1.5 seconds)...";
+            
+            const fetchData = () => new Promise(resolve => {
+                setTimeout(() => resolve("Success: Data received from async API!"), 1500);
+            });
+
+            const result = await fetchData();
+            asyncOutput.textContent = `✓ ${result}`;
+            asyncBtn.disabled = false;
+        });
+    </script>
 </body>
-
 </html>
