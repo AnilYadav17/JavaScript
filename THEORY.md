@@ -538,6 +538,20 @@ Node.js  → JavaScript runtime environment
 
 5. Supports Modules : JS supports modules which helps in code organization and reusability.
 
-### FRAMEWORKS
-JEST 
-REACT
+### Popular Frameworks and Libraries
+
+#### 1. Frontend Frameworks & Libraries
+* **React**: A component-based declarative library for building interactive user interfaces.
+* **Vue.js**: An approachable, performant, and versatile progressive framework for building web UIs.
+* **Angular**: A comprehensive, enterprise-ready TypeScript-based web framework.
+* **Next.js**: A full-stack React framework featuring server-side rendering (SSR) and static site generation (SSG).
+
+#### 2. Backend & Runtime Frameworks
+* **Express.js**: Fast, unopinionated, minimalist web framework for Node.js.
+* **NestJS**: A progressive Node.js framework for building efficient, reliable, and scalable server-side applications.
+* **Fastify**: High-performance, low overhead web framework for Node.js.
+
+#### 3. Testing Frameworks
+* **Jest**: A delightful JavaScript testing framework with a focus on simplicity.
+* **Vitest**: A blazing fast next-generation unit test framework powered by Vite.
+* **Playwright / Cypress**: Modern end-to-end (E2E) testing frameworks for browser automation.
