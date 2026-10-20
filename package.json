@@ -1,0 +1,12 @@
+{
+  "name": "js-learning",
+  "version": "1.0.0",
+  "description": "JavaScript Learning & Reference Guide",
+  "main": "1.js",
+  "scripts": {
+    "start": "node 1.js",
+    "dev": "node --watch 1.js"
+  },
+  "author": "Anil Yadav",
+  "license": "ISC"
+}
