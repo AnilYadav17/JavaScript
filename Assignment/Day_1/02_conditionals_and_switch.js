@@ -1,4 +1,4 @@
-// Day 1 - Part 2: Conditionals (If-Else & Switch Case)
+// Day 1 - Part 2: Conditionals (If-Else, Switch Case & Assignments)
 
 // 1. Simple If
 let score = 85;
@@ -72,3 +72,34 @@ switch (day) {
     default:
         console.log("Invalid day");
 }
+
+// --- If-Else Practice Assignments ---
+console.log("\n--- If-Else Assignments ---");
+
+// Assignment 1: Check Positive, Negative, or Zero
+function checkNumber(n) {
+    if (n > 0) return "Positive";
+    if (n < 0) return "Negative";
+    return "Zero";
+}
+console.log("Check 10:", checkNumber(10));
+console.log("Check -5:", checkNumber(-5));
+console.log("Check 0:", checkNumber(0));
+
+// Assignment 2: Find Largest of Three Numbers
+function findLargest(a, b, c) {
+    if (a >= b && a >= c) return a;
+    if (b >= a && b >= c) return b;
+    return c;
+}
+console.log("Largest of (15, 42, 27):", findLargest(15, 42, 27));
+
+// Assignment 3: Leap Year Check
+function isLeapYear(year) {
+    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+        return `${year} is a Leap Year`;
+    }
+    return `${year} is NOT a Leap Year`;
+}
+console.log(isLeapYear(2024));
+console.log(isLeapYear(2025));
