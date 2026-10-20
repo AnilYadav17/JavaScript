@@ -1,0 +1,39 @@
+# 3-Day JavaScript Homework Plan
+
+### Day 1: Operators & Conditionals
+- `Day_1/01_operators.js`:
+  - Arithmetic operators (`+`, `-`, `*`, `/`, `%`, `**`)
+  - Relational operators (`==`, `===`, `!=`, `!==`, `>`, `<`, `>=`, `<=`)
+  - Assignment operators (`=`, `+=`, `-=`, `*=`, `/=`, `%=`)
+  - Logical operators (`&&`, `||`, `!`)
+  - Increment & Decrement operators (`++`, `--`)
+  - Bitwise operators (`&`, `|`, `^`, `~`, `<<`, `>>`)
+- `Day_1/02_conditionals_and_switch.js`:
+  - Types of if-else (simple if, if-else, ladder, nested, ternary)
+  - Switch case statement
+  - Assignments: Positive/Negative/Zero, Largest of 3, Leap Year
+
+### Day 2: Loops & Jump Statements
+- `Day_2/01_loops_break_continue.js`:
+  - For loop, while loop, do-while loop, for...of loop
+  - Break keyword
+  - Continue keyword
+- `Day_2/02_loop_assignments.js`:
+  - Print 1 to 10 (for) & 10 to 1 (while)
+  - Multiplication table
+  - Sum of first N numbers
+  - Factorial
+  - Reverse a number (while loop)
+  - Prime check
+  - Star pattern
+
+### Day 3: Strings & String Methods
+- `Day_3/01_string_methods.js`:
+  - All string methods (`length`, `charAt`, `at`, `charCodeAt`, `toUpperCase`, `toLowerCase`, `trim`, `slice`, `substring`, `indexOf`, `includes`, `replace`, `replaceAll`, `split`, `repeat`, `padStart`, `padEnd`, template literals)
+- `Day_3/02_string_assignments.js`:
+  - Vowels, consonants, and spaces counter
+  - Palindrome checker
+  - Reverse string
+  - Title Case (Capitalize words)
+  - Mask sensitive data (Credit Card / Mobile)
+  - Word counter
