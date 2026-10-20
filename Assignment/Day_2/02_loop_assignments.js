@@ -33,3 +33,43 @@ for (let i = 1; i <= n; i++) {
     sum += i;
 }
 console.log(`Sum of first ${n} numbers:`, sum);
+
+// 5. Factorial of a Number (5! = 120)
+console.log("\n--- 5. Factorial of 5 ---");
+let factNum = 5;
+let fact = 1;
+for (let i = 1; i <= factNum; i++) {
+    fact *= i;
+}
+console.log(`${factNum}! =`, fact);
+
+// 6. Reverse a Number using While Loop (12345 -> 54321)
+console.log("\n--- 6. Reverse a Number ---");
+let originalNum = 12345;
+let temp = originalNum;
+let reversedNum = 0;
+
+while (temp > 0) {
+    let lastDigit = temp % 10;
+    reversedNum = (reversedNum * 10) + lastDigit;
+    temp = Math.floor(temp / 10);
+}
+console.log(`Original: ${originalNum} -> Reversed: ${reversedNum}`);
+
+// 7. Prime Number Check
+console.log("\n--- 7. Prime Number Check ---");
+function isPrime(num) {
+    if (num <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+    }
+    return true;
+}
+console.log("Is 7 Prime?:", isPrime(7));
+console.log("Is 12 Prime?:", isPrime(12));
+
+// 8. Simple Right Triangle Star Pattern
+console.log("\n--- 8. Star Pattern ---");
+for (let i = 1; i <= 4; i++) {
+    console.log("* ".repeat(i));
+}
