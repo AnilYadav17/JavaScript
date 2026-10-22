@@ -38,28 +38,28 @@ if (hasAccount) {
 
 let number = 7;
 let result = (number % 2 === 0) ? "Even" : "Odd";
-console.log(`${number} is: ${result}`);
+console.log(number, "is:", result);
 
 let day = 3;
 switch (day) {
     case 1:
-        console.log("Day: Monday");
+        console.log("Monday");
         break;
     case 2:
-        console.log("Day: Tuesday");
+        console.log("Tuesday");
         break;
     case 3:
-        console.log("Day: Wednesday");
+        console.log("Wednesday");
         break;
     case 4:
-        console.log("Day: Thursday");
+        console.log("Thursday");
         break;
     case 5:
-        console.log("Day: Friday");
+        console.log("Friday");
         break;
     case 6:
     case 7:
-        console.log("Day: Weekend");
+        console.log("Weekend");
         break;
     default:
         console.log("Invalid day");
@@ -67,27 +67,30 @@ switch (day) {
 
 console.log("\n--- If-Else Assignments ---");
 
-function checkNumber(n) {
-    if (n > 0) return "Positive";
-    if (n < 0) return "Negative";
-    return "Zero";
+let n = 10;
+if (n > 0) {
+    console.log(n, "is Positive");
+} else if (n < 0) {
+    console.log(n, "is Negative");
+} else {
+    console.log(n, "is Zero");
 }
-console.log("Check 10:", checkNumber(10));
-console.log("Check -5:", checkNumber(-5));
-console.log("Check 0:", checkNumber(0));
 
-function findLargest(a, b, c) {
-    if (a >= b && a >= c) return a;
-    if (b >= a && b >= c) return b;
-    return c;
+let num1 = 15;
+let num2 = 42;
+let num3 = 27;
+let largest = num1;
+if (num2 > largest) {
+    largest = num2;
 }
-console.log("Largest of (15, 42, 27):", findLargest(15, 42, 27));
+if (num3 > largest) {
+    largest = num3;
+}
+console.log("Largest of", num1, num2, num3, "is:", largest);
 
-function isLeapYear(year) {
-    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
-        return `${year} is a Leap Year`;
-    }
-    return `${year} is NOT a Leap Year`;
+let year = 2024;
+if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+    console.log(year, "is a Leap Year");
+} else {
+    console.log(year, "is NOT a Leap Year");
 }
-console.log(isLeapYear(2024));
-console.log(isLeapYear(2025));
